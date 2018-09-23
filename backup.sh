@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-BACKUP_NAME="$(date -u +%Y-%m-%d_%H-%M-%S)_UTC.gz"
+BACKUP_NAME="$(date -u +%Y-%m-%d_%H-%M-%S)_UTC_$POD_NAMESPACE.gz"
 
 # Run backup
 mongodump --uri "$MONGO_URI" -o /backup/dump
